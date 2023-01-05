@@ -485,6 +485,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@legendapp/state@^0.23.1":
+  version "0.23.1"
+  resolved "https://registry.yarnpkg.com/@legendapp/state/-/state-0.23.1.tgz#404824ee8011c2546ffa09c4d4e438eaa07a2e2f"
+  integrity sha512-gr8L0r6h9zYSy04GIahgsQLpQ4Xkr4K7UW5BKO9H9G8tvH35RHAOH+MHlA1JqUn9HDzJnW4gen93oEXDeB7piA==
+
 "@mui/base@5.0.0-alpha.110":
   version "5.0.0-alpha.110"
   resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-alpha.110.tgz#61174f64b23e667387708b2cbb31339e58c714cf"
