@@ -11,8 +11,10 @@ export default defineConfig({
     federation({
       name: "host-app",
       remotes: {
-        remote_app: "http://localhost:4001/assets/remoteEntry.js",
-        remote_app_b: "http://localhost:4002/assets/remoteEntry.js",
+        remote_app:
+          "https://react-micro-app-a.vercel.app/assets/remoteEntry.js",
+        remote_app_b:
+          "https://react-micro-app-b.vercel.app/assets/remoteEntry.js",
       },
       shared: {
         ...Object.entries(pkg.dependencies).reduce((acc, [key, version]) => {
