@@ -68,7 +68,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ColorModeProvider>
       {({ mode }) => {
-        console.log(createOwnTheme(mode));
         return (
           <ThemeProvider theme={createOwnTheme(mode)}>
             <RouterProvider router={router} />

@@ -1,5 +1,5 @@
-import { Box, Button, Grid, Paper, Typography, useTheme } from "@mui/material";
-import { useState, Fragment } from "react";
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,9 +13,8 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <>
       <Grid container spacing={3} mt={3}>
-        {/* Chart */}
         <Grid item xs={12}>
           <Paper
             sx={{
@@ -66,19 +65,22 @@ function App() {
             <Typography component="h4" variant="h6">
               Github:
             </Typography>
-            <a href="https://www.google.com" target="_blank">
-              www.google.com
+            <a
+              href={"https://github.com/RashCD/react-host-app"}
+              target="_blank"
+            >
+              {"https://github.com/RashCD/react-host-app"}
             </a>
             <Typography component="h4" variant="h6">
               Website Link:
             </Typography>
-            <a href={window.location.href} target="_blank">
-              {window.location.href}
+            <a href={"https://react-host-app.vercel.app/"} target="_blank">
+              {"https://react-host-app.vercel.app/"}
             </a>
           </Paper>
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 }
 
