@@ -2,7 +2,7 @@ import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import { useState, useContext } from "react";
 import { GlobalStateContext } from "host_app/GlobalStateProvider";
 import { useSelector } from "@legendapp/state/react";
-import { obs } from "./store";
+import { obs } from "host_app/store";
 
 function App() {
   const [count, setCount] = useState(0);
