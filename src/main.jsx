@@ -22,6 +22,7 @@ import { grey } from "@mui/material/colors";
 
 import AppRemoteA from "./AppRemoteA";
 import AppRemoteB from "./AppRemoteB";
+import GlobalStateProvider from "host_app/GlobalStateProvider";
 
 const router = createBrowserRouter([
   {
@@ -70,7 +71,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {({ mode }) => {
         return (
           <ThemeProvider theme={createOwnTheme(mode)}>
-            <RouterProvider router={router} />
+            <GlobalStateProvider>
+              <RouterProvider router={router} />
+            </GlobalStateProvider>
           </ThemeProvider>
         );
       }}
