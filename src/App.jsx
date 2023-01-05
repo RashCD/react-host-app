@@ -1,15 +1,20 @@
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GlobalStateContext } from "host_app/GlobalStateProvider";
 
 function App() {
   const [count, setCount] = useState(0);
+  const { globalCount, toggleIncrement, toggleDecrement } =
+    useContext(GlobalStateContext);
 
-  const handleIncrement = () => {
+  const handleIncrementFunc = () => {
     setCount((prev) => prev + 1);
+    toggleIncrement();
   };
 
-  const handleDecrement = () => {
+  const handleDecrementFunc = () => {
     setCount((prev) => prev - 1);
+    toggleDecrement();
   };
 
   return (
@@ -25,28 +30,38 @@ function App() {
               minHeight: 140,
             }}
           >
-            <Typography
-              component="h3"
-              variant="h3"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1, p: 2 }}
-            >
-              {count}
-            </Typography>
+            <Box width={1} display="flex" justifyContent="space-around" mb={5}>
+              <Box display="flex" flexDirection="column" alignItems="center">
+                <Typography component="h3" variant="h3" color="inherit">
+                  {globalCount}
+                </Typography>
+                <Typography variant="subtitle1">useContext</Typography>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center">
+                <Typography component="h3" variant="h3" color="inherit">
+                  {count}
+                </Typography>
+                <Typography variant="subtitle1">Redux toolkit</Typography>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center">
+                <Typography component="h3" variant="h3" color="inherit">
+                  {count}
+                </Typography>
+                <Typography variant="subtitle1">Proxy pub/sub</Typography>
+              </Box>
+            </Box>
             <Box justifyContent={"space-between"}>
               <Button
                 variant="contained"
-                sx={{ mx: 3 }}
-                onClick={handleDecrement}
+                sx={{ mx: 10 }}
+                onClick={handleDecrementFunc}
               >
                 -
               </Button>
-              Test
               <Button
                 variant="contained"
-                sx={{ mx: 3 }}
-                onClick={handleIncrement}
+                sx={{ mx: 10 }}
+                onClick={handleIncrementFunc}
               >
                 +
               </Button>
