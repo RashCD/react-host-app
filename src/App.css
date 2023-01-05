@@ -1,0 +1,16 @@
+.AppHost {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left-column {
+  display: flex;
+  flex: 1
+}
+
+.right-column {
+  display: flex;
+  flex: 1;
+  background: grey;
+}
