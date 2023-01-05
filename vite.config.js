@@ -10,11 +10,16 @@ export default defineConfig({
     react(),
     federation({
       name: "host-app",
+      filename: "remoteEntry.js",
       remotes: {
+        host_app: "https://react-host-app.vercel.app/assets/remoteEntry.js",
         remote_app:
           "https://react-micro-app-a.vercel.app/assets/remoteEntry.js",
         remote_app_b:
           "https://react-micro-app-b.vercel.app/assets/remoteEntry.js",
+      },
+      exposes: {
+        "./GlobalStateProvider": "./src/GlobalStateProvider.jsx",
       },
       shared: {
         ...Object.entries(pkg.dependencies).reduce((acc, [key, version]) => {
