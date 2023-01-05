@@ -20,6 +20,7 @@ export default defineConfig({
       },
       exposes: {
         "./GlobalStateProvider": "./src/GlobalStateProvider.jsx",
+        "./store": "./src/store.js",
       },
       shared: {
         ...Object.entries(pkg.dependencies).reduce((acc, [key, version]) => {
