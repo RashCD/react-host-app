@@ -1,26 +1,26 @@
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import { useState, useContext } from "react";
 import { GlobalStateContext } from "host_app/GlobalStateProvider";
-import { useSelector } from "@legendapp/state/react";
-import { obs } from "host_app/store";
+import useCountStore from "host_app/store";
 
 function App() {
   const [count, setCount] = useState(0);
   const { globalCount, toggleIncrement, toggleDecrement } =
     useContext(GlobalStateContext);
+  const { counter, increaseCounter, decreaseCounter } = useCountStore();
 
-  const proxyCount = useSelector(obs.counter.count);
+  console.log(counter);
 
   const handleIncrementFunc = () => {
     setCount((prev) => prev + 1);
     toggleIncrement();
-    obs.counter.increaseCounter();
+    // increaseCounter();
   };
 
   const handleDecrementFunc = () => {
     setCount((prev) => prev - 1);
     toggleDecrement();
-    obs.counter.decreaseCounter();
+    // decreaseCounter();
   };
 
   return (
@@ -51,7 +51,7 @@ function App() {
               </Box>
               <Box display="flex" flexDirection="column" alignItems="center">
                 <Typography component="h3" variant="h3" color="inherit">
-                  {proxyCount}
+                  {0}
                 </Typography>
                 <Typography variant="subtitle1">Proxy pub/sub</Typography>
               </Box>
