@@ -19,7 +19,6 @@ import "@fontsource/roboto/700.css";
 import ColorModeProvider from "./ColorModeContext";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { enableLegendStateReact } from "@legendapp/state/react";
 
 import AppRemoteA from "./AppRemoteA";
 import AppRemoteB from "./AppRemoteB";
@@ -65,8 +64,6 @@ const createOwnTheme = (mode) =>
       },
     },
   });
-
-enableLegendStateReact();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

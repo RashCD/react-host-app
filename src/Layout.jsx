@@ -16,8 +16,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import MainListItems from "./MainListItems";
 import { Outlet } from "react-router-dom";
 import { ColorModeContext } from "./ColorModeContext";
-import { useSelector } from "@legendapp/state/react";
-import { persist } from "./store";
 
 const drawerWidth = 240;
 
@@ -115,7 +113,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 function Layout() {
   const [open, setOpen] = useState(true);
   const colorMode = useContext(ColorModeContext);
-  const isChecked = useSelector(() => persist.forceError.get());
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -160,12 +157,6 @@ function Layout() {
             color="warning"
             checked={colorMode.mode === "dark"}
             onChange={handleChange}
-            inputProps={{ "aria-label": "controlled" }}
-          />
-          <Switch
-            checked={isChecked}
-            onChange={() => persist.forceError.toggle()}
-            color="warning"
             inputProps={{ "aria-label": "controlled" }}
           />
         </Toolbar>
