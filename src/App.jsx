@@ -9,18 +9,16 @@ function App() {
     useContext(GlobalStateContext);
   const { counter, increaseCounter, decreaseCounter } = useCountStore();
 
-  console.log(counter);
-
   const handleIncrementFunc = () => {
     setCount((prev) => prev + 1);
     toggleIncrement();
-    // increaseCounter();
+    increaseCounter();
   };
 
   const handleDecrementFunc = () => {
     setCount((prev) => prev - 1);
     toggleDecrement();
-    // decreaseCounter();
+    decreaseCounter();
   };
 
   return (
@@ -51,7 +49,7 @@ function App() {
               </Box>
               <Box display="flex" flexDirection="column" alignItems="center">
                 <Typography component="h3" variant="h3" color="inherit">
-                  {0}
+                  {counter}
                 </Typography>
                 <Typography variant="subtitle1">Proxy pub/sub</Typography>
               </Box>
