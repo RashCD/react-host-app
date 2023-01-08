@@ -23,6 +23,7 @@ import { grey } from "@mui/material/colors";
 import AppRemoteA from "./AppRemoteA";
 import AppRemoteB from "./AppRemoteB";
 import GlobalStateProvider from "host_app/GlobalStateProvider";
+import AppRemoteC from "./AppRemoteC";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/module/c",
-            element: <p>Module C</p>,
+            element: <AppRemoteC />,
           },
         ],
       },
